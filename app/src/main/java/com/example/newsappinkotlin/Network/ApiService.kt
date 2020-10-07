@@ -1,5 +1,6 @@
-package com.example.newsappinkotlin
+package com.example.newsappinkotlin.Network
 
+import com.example.newsappinkotlin.Model.Response
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
