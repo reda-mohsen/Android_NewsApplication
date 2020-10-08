@@ -40,7 +40,14 @@
         android:id="@+id/itemDetailsFragment"
         android:name="com.example.newsappinkotlin.ui.destinations.ItemDetailsFragment"
         android:label="fragment_item_details"
-        tools:layout="@layout/fragment_item_details" />
+        tools:layout="@layout/fragment_item_details" >
+        <action
+            android:id="@+id/action_itemDetailsFragment_to_headlinesFragment"
+            app:destination="@id/headlinesFragment" />
+        <action
+            android:id="@+id/action_itemDetailsFragment_to_savedItemsFragment"
+            app:destination="@id/savedItemsFragment" />
+    </fragment>
 
 
 </navigation>
