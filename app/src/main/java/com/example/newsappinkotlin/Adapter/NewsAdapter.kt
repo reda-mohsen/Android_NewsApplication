@@ -9,9 +9,10 @@ import com.example.newsappinkotlin.R
 import kotlinx.android.synthetic.main.card.view.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.example.newsappinkotlin.ui.destinations.ViewModel.MyVM
 
 
-class NewsAdapter(var news:MutableList<News>): RecyclerView.Adapter<NewsAdapter.MyVH>() {
+class NewsAdapter(var news:MutableList<News>,var model: MyVM): RecyclerView.Adapter<NewsAdapter.MyVH>() {
     class MyVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun onbind(n:News){
             itemView.txt.text=n.title
@@ -26,6 +27,9 @@ class NewsAdapter(var news:MutableList<News>): RecyclerView.Adapter<NewsAdapter.
 
     override fun onBindViewHolder(holder: MyVH, position: Int) {
         holder.onbind(news[position])
+        holder.itemView.setOnClickListener(){
+            model.selectArticle(news[position])
+        }
     }
     fun append(list: List<News>){
         this.news.addAll(list)
