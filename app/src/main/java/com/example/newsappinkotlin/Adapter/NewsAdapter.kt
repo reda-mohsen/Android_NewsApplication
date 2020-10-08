@@ -35,6 +35,9 @@ class NewsAdapter(var news:MutableList<News>,var model: MyVM): RecyclerView.Adap
         this.news.addAll(list)
         notifyItemRangeChanged(this.itemCount,news.size-1)
     }
+    fun add(n:News){
+        news.add(news.lastIndex+1,n)
+    }
 
 
 }
