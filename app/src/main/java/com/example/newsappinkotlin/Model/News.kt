@@ -1,6 +1,11 @@
 package com.example.newsappinkotlin.Model
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
+
+@Entity(
+    tableName = "News"
+)
 
 data class News (
     @SerializedName("author") var author :String?,
